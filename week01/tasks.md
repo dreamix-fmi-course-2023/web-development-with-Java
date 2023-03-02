@@ -58,7 +58,14 @@ This implementation to have the following logic:
  - if the age is not set, then print Hello, I am <name>.
  - if the the name is not set, then print I am John Doe
 
-# Task 7
+# Task 7 
+Create interface GeometricObject which has the following methods:
+ - double getArea();
+ - double getPerimeter();
+
+ Implement Circle and Rectangle that implement the GeometricObject interface.
+
+# Task 8
 Create class Car with 4 attributes: brand, model, horsePower, year.
 
 Create method insuranceCategory() which will return the category of the car by the year of construction:
@@ -81,7 +88,7 @@ Lada 5 1989 75 -> 600
 Mercedes-Benz S220 2009 160 -> 217.5
 
 
-# Task 8
+# Task 9
 Create class FMIDate in which you will have the fields year, month and day defined.
 
 The class will have the follwoing methods:
