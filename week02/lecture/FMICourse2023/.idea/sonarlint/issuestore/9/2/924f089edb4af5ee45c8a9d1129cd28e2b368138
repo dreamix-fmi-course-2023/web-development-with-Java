@@ -1,0 +1,19 @@
+
+2
+java:S1643"Use a StringBuilder instead.(µ»
+0
+java:S1220""Move this file to a named package.
+Q
+java:S1854"6Remove this useless assignment to local variable "s2".(…şÑÛúÿÿÿÿ
+K
+java:S1854"6Remove this useless assignment to local variable "s1".(è¢¸5
+S	java:S106"9Replace this use of System.out or System.err by a logger.(‚ŞÏ¥ıÿÿÿÿ
+Q	java:S125"<This block of commented-out lines of code should be removed.(´ì²Ó
+<
+java:S1481"'Remove this unused "s1" local variable.(è¢¸5
+B
+java:S1481"'Remove this unused "s2" local variable.(…şÑÛúÿÿÿÿ
+]	java:S125"<This block of commented-out lines of code should be removed.(É÷ıæùÿÿÿÿ8ê¦õğé0
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(­ËÖşÿÿÿÿ8õĞòğé0
+G
+java:S1128"1Remove this unused import 'java.math.BigDecimal'.(êêŠ
