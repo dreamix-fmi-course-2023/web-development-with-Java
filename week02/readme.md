@@ -6,16 +6,16 @@ Before starting your task create a package named *bg.uni.fmi.lab02.collections*
 When you are working on your solution you can create a single class Exercise where you can write your function solutions, or create class for each task (it's up to you).
 
 ## Task 0
-Write a method to insert an element into the array list at the first position
+Write a method to insert an element(String) into the array list at the first position
 
 ## Task 1
-Write a method to retrieve an element (at a specified index) from a given list.
+Write a method to retrieve an element(String) (at a specified index) from a given list.
 
 ## Task 2
-Write a method to remove the third element from an array list.
+Write a method to remove the third element(String) from an array list.
 
 ## Task 3
-Write a method to search an element in a list.
+Write a method to search an element(String) in a list.
 
 ## Task 4
 Write a method to sort a given array list. (list of String/Integer/Dog).
