@@ -68,7 +68,7 @@ The Dealership class represents a car dealership, and has the following properti
 - invoiceService (InvoiceService)
 #### The Dealership class has the following methods:
 
-- A constructor that sets the name of the dealership and initializes a new CarService object.
+- A constructor that sets the name of the dealership, a instance of CarService object and instance of InvoiceService.
 - A method called addCar that takes a Car object and adds it to the dealership's inventory using the CarService object.
 - A method called removeCar that takes a Car object and removes it from the dealership's inventory using the CarService object.
 - A method called searchCars that takes a make, model, year, and price and returns a list of Car objects that match the search criteria using the CarService object.
