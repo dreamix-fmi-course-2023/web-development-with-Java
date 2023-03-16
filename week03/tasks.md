@@ -59,7 +59,7 @@ The InvoiceService class is responsible for implementing the business logic of t
 
 - A method called addInvoice that takes an Invoice object and adds it to the invoice history using the InvoiceRepository object.
 - A method called getInvoiceHistory that returns a list of all the invoices in the history using the InvoiceRepository object.
-- A method called calculateTotalPrice that takes an Invoice object and calculates and returns the total price of the invoice, including taxes.
+- A method called calculateTotalPrice that returns the total price of the invoice, including taxes.
 ### Dealership Class
 The Dealership class represents a car dealership, and has the following properties:
 
