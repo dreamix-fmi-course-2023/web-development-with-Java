@@ -35,7 +35,7 @@ public interface BookService {
   List<Book> getAllBooksByAuthor(String author);
 
   /**
-   * Get all books publish after specific year
+   * Get all books publish after specific date
    * @param from
    * @return
    */
