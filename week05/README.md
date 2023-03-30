@@ -76,7 +76,6 @@ Add inside it a minimum/maximum value for invoice tax rate field. Then use this 
 ```
 use the following notation
 config.invoice.maximum_tax_rate
-config.event.maximum_seat
 ```
 
 Tips: you can use @Value or AppConfig class from lecture example. 
