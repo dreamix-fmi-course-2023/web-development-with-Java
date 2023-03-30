@@ -43,6 +43,35 @@ private void logInformation(Object toLog, LoggerLevel currentLoggerLevel) {
 
 ```
 
+Information for the logger level can be store inside enum like:
+```
+public enum LoggerLevel {
+
+     INFO(1, "INFO"),
+     DEBUG(2, "DEBUG"),
+     TRACE(3, "TRACE"),
+     ERROR(0, "ERROR");
+
+     private final Integer code;
+     public final String label;
+
+     LoggerLevel(Integer code, String label) {
+         this.code = code;
+         this.label = label;
+     }
+
+     public Integer getCode() {
+         return code;
+     }
+
+     public final String getLabel() {
+         return label;
+     }
+
+ }
+```
+
+
 Based on the logging level defined inside the application.propeties limit the information that you log inside your application.
 
 Logging parameters: INFO, DEBUG, TRACE
@@ -76,7 +105,6 @@ Add inside it a minimum/maximum value for invoice tax rate field. Then use this 
 ```
 use the following notation
 config.invoice.maximum_tax_rate
-config.event.maximum_seat
 ```
 
 Tips: you can use @Value or AppConfig class from lecture example. 
