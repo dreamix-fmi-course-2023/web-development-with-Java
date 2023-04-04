@@ -1,13 +1,13 @@
 package bg.fmi.course.wdwj.service.impl;
 
+import bg.fmi.course.wdwj.config.AppConfig;
+import bg.fmi.course.wdwj.logger.Logger;
 import bg.fmi.course.wdwj.model.Book;
 import bg.fmi.course.wdwj.repository.BookRepository;
 import bg.fmi.course.wdwj.service.BookService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -18,11 +18,16 @@ import java.util.function.Predicate;
 @Slf4j
 @Service
 public class BookServiceImpl implements BookService {
+
     private final BookRepository bookRepository;
+    private final Logger logger;
+    private final AppConfig appConfig;
 
     @Autowired
-    public BookServiceImpl(BookRepository bookRepository) {
+    public BookServiceImpl(BookRepository bookRepository, Logger logger, AppConfig appConfig) {
         this.bookRepository = bookRepository;
+        this.logger = logger;
+        this.appConfig = appConfig;
     }
 
     @Override
@@ -38,7 +43,11 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public void remove(Book o) {
+        logger.info("remove");
 
+        log.info("remove");
+
+        logger.info(appConfig.getLogger().getName());
     }
 
     @Override
@@ -62,7 +71,11 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public void clear() {
+        logger.debug(">>>>>>>>>> clear");
 
+        logger.info(appConfig.getLogger().getName());
+
+        logger.info(appConfig.getDealership().getMaxTaxRate());
     }
 
     @Override

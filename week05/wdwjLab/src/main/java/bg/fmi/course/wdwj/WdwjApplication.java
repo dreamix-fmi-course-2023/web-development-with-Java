@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.List;
 
 @SpringBootApplication
-public class WdwjApplication {
+public class WdwjApplication implements CommandLineRunner {
 
 	@Autowired
 	private BookService bookService;
@@ -19,8 +19,8 @@ public class WdwjApplication {
 		SpringApplication.run(WdwjApplication.class, args);
 	}
 
-//	@Override
-//	public void run(String... args) throws Exception {
+	@Override
+	public void run(String... args) throws Exception {
 //		System.out.println(">>>>>>>>>>> ");
 //		Book book = new Book();
 //		book.setAuthor("ASD");
@@ -30,6 +30,9 @@ public class WdwjApplication {
 //
 //		List<Book> booksByAuthor = bookService.getAllBooksByAuthor("ASD");
 //		booksByAuthor.stream().forEach(System.out::println);
-//
-//	}
+
+		System.out.println(">>>>");
+		bookService.clear();
+
+	}
 }
