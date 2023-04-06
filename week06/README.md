@@ -3,6 +3,8 @@ For all your tasks use your Dealership system project from week05 or use the one
 # Task 00
 *To call REST endpoitns we will use Postman tool.*
 
+[link](https://github.com/GeorgiMinkov/web-development-with-Java/blob/main/week06/tasks.md)
+
 Download from **[here](https://www.postman.com/downloads/)**
 
 Consume data from random-data-api API about beer information. 
