@@ -1,9 +1,13 @@
-package com.fmi.week03;
+package bg.fmi.course.wdwj.dealership.repository;
+
+import bg.fmi.course.wdwj.dealership.model.Car;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Repository
 public class CarRepository {
     private List<Car> cars;
 
