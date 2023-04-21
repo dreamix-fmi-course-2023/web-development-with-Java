@@ -1,6 +1,7 @@
 package bg.fmi.course.wdwj.dealership.service;
 
 import bg.fmi.course.wdwj.dealership.ResourceNotFoundException;
+import bg.fmi.course.wdwj.dealership.controller.validation.ApiBadRequest;
 import bg.fmi.course.wdwj.dealership.model.Car;
 import bg.fmi.course.wdwj.dealership.model.Dealership;
 import bg.fmi.course.wdwj.dealership.model.Invoice;
@@ -37,6 +38,13 @@ public class DealershipService {
     public void addDealership(Dealership dealership) {
         if (dealership == null) {
             throw new IllegalArgumentException("Incorrect data");
+        }
+
+        final List<Dealership> all = dealershipRepository.getAll();
+        for (Dealership dealershipEntity: all) {
+            if(dealershipEntity.getName().equals(dealership.getName())) {
+                throw new ApiBadRequest("Dealership already exists");
+            }
         }
         dealershipRepository.addDealership(dealership);
     }
