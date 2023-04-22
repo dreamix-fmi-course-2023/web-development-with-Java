@@ -12,4 +12,6 @@ public class RestExceptionHandler {
         // ApiErrorDto -> message, code
         return ResponseEntity.badRequest().body(exception.getMessage() + " from advice");
     }
+
+    // TODO: ResourceNotFoundException
 }

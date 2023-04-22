@@ -51,7 +51,7 @@ public class DealershipService {
 
     public Dealership getDealershipByName(String name) {
         Optional<Dealership> dealership = dealershipRepository.getDealershipByName(name);
-        if (!dealership.isPresent()) {
+        if (dealership.isEmpty()) {
             throw new ResourceNotFoundException("Missing data");
         }
 

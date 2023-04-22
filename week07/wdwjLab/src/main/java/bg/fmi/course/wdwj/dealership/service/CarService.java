@@ -20,6 +20,7 @@ public class CarService {
     }
 
     public void addCar(Car car) {
+        // TODO: Check if car already exists for make/model/year
         carRepository.addCar(car);
     }
 
