@@ -15,7 +15,7 @@ Abstract steps:
 1. add necessary dependencies
 2. add properties inside the application property file (.properties or .yml) for your DB connection (connection string, driver, dialect, etc)
 ```
-For the configurations you can  use the example from [lecture week08](https://github.com/GeorgiMinkov/web-development-with-Java/tree/main/week08/FMI_DB_JPA).
+For the configurations you can  use the example from [lecture week08](https://github.com/GeorgiMinkov/web-development-with-Java/tree/main/week08/demo/FMI_DB_JPA).
 
 ```
 spring.datasource.url=jdbc:postgresql://localhost:5433/postgres
