@@ -1,0 +1,3 @@
+config:
+  dealership:
+    maxTaxRate: 10
