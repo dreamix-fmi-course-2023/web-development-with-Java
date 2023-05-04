@@ -7,7 +7,7 @@ For our Dealership platform, we will define the following business requirements:
 With this in mind, design and implement the DB model structure
 
 # Code from Lecture
-![click here](https://github.com/dndanoff/java-db-connectivity)
+[click here](https://github.com/dndanoff/java-db-connectivity)
 
 # Task 1
 Create a DB model which will allow you to have Dealerships with associated cars.
