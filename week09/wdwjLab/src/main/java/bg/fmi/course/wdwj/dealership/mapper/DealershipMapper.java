@@ -14,9 +14,16 @@ import java.util.List;
 @Component
 public class DealershipMapper {
 
-    public DealershipDto toDto(Dealership entity) {
-        return new DealershipDto(entity.getName());
+    public DealershipDto toDto(Dealership dealership) {
+        return DealershipDto.builder()
+                .id(dealership.getId())
+                .name(dealership.getName())
+                .address(dealership.getAddress())
+                .phoneNumber(dealership.getPhoneNumber())
+                .email(dealership.getEmail())
+                .build();
     }
+
 
     public List<DealershipDto> toDtoCollection(List<Dealership> entities) {
         if(entities == null) {
@@ -28,7 +35,14 @@ public class DealershipMapper {
                        .toList();
     }
 
-    public Dealership toEntity(DealershipDto dealershipDto) {
-        return new Dealership();
+    public Dealership toEntity(DealershipDto dto) {
+        return Dealership.builder()
+                .id(dto.getId())
+                .name(dto.getName())
+                .address(dto.getAddress())
+                .phoneNumber(dto.getPhoneNumber())
+                .email(dto.getEmail())
+                .build();
     }
+
 }

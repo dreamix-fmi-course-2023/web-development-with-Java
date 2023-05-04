@@ -16,7 +16,7 @@ public class Invoice {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long invoiceId;
+    private Long id;
 
     @Column
     private String invoiceNumber;
@@ -35,4 +35,5 @@ public class Invoice {
 
     @Column
     private BigDecimal totalPrice;
+
 }

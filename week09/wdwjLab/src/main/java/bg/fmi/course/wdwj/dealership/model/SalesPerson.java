@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-@Table
+@Table(name = "sales_person")
 public class SalesPerson {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,7 +13,7 @@ public class SalesPerson {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "DEALERSHIP_ID")
+    @JoinColumn(name = "dealership_id")
     private Dealership dealership;
 
     @OneToMany(mappedBy = "salesPerson")

@@ -2,6 +2,7 @@ package bg.fmi.course.wdwj.dealership.service;
 
 import bg.fmi.course.wdwj.dealership.ResourceNotFoundException;
 import bg.fmi.course.wdwj.dealership.controller.validation.ApiBadRequest;
+import bg.fmi.course.wdwj.dealership.dto.CarDto;
 import bg.fmi.course.wdwj.dealership.model.Car;
 import bg.fmi.course.wdwj.dealership.model.Dealership;
 //import bg.fmi.course.wdwj.dealership.model.Invoice;
@@ -40,17 +41,17 @@ public class DealershipService {
             throw new IllegalArgumentException("Incorrect data");
         }
 
-        final List<Dealership> all = dealershipRepository.getAll();
+        final List<Dealership> all = dealershipRepository.findAll(); // how can we optimize this validation
         for (Dealership dealershipEntity: all) {
             if(dealershipEntity.getName().equals(dealership.getName())) {
                 throw new ApiBadRequest("Dealership already exists");
             }
         }
-        dealershipRepository.addDealership(dealership);
+        dealershipRepository.save(dealership);
     }
 
     public Dealership getDealershipByName(String name) {
-        Optional<Dealership> dealership = dealershipRepository.getDealershipByName(name);
+        Optional<Dealership> dealership = null;//dealershipRepository.getDealershipByName(name);
         if (dealership.isEmpty()) {
             throw new ResourceNotFoundException("Missing data");
         }
@@ -59,7 +60,19 @@ public class DealershipService {
     }
 
     public List<Dealership> getDealerships() {
-        return dealershipRepository.getAll();
+        return dealershipRepository.findAll();
+    }
+
+    public Long addCarToDealership(Long id, CarDto carDto) {
+        // find if the car already exists for the specific dealership
+        Optional<Dealership> dealership = dealershipRepository.findById(id);
+        if (!dealership.isPresent()) {
+            throw new ResourceNotFoundException("No dealership present");
+        }
+
+        Car car = carService.constructCarEntityBy(carDto, dealership.get());
+        return carService.addCar(car);
+
     }
 
 //    public void sellCar(Car car, String customerName) {

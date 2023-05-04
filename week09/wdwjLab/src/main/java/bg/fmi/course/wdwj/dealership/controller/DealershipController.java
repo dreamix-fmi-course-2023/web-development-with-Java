@@ -1,5 +1,6 @@
 package bg.fmi.course.wdwj.dealership.controller;
 
+import bg.fmi.course.wdwj.dealership.dto.CarDto;
 import bg.fmi.course.wdwj.dealership.dto.DealDto;
 import bg.fmi.course.wdwj.dealership.dto.DealershipDto;
 import bg.fmi.course.wdwj.dealership.mapper.DealershipMapper;
@@ -37,6 +38,11 @@ public class DealershipController {
         return mapper.toDtoCollection(dealerships);
     }
 
+    @PostMapping("/{id}/cars")
+    public Long addCarToDealership(@PathVariable Long id, @RequestBody CarDto carDto) {
+        return service.addCarToDealership(id, carDto);
+    }
+
     /**
      * As the name is our current unique identifier, we can retrieve single Dealership by name
      *
@@ -47,7 +53,7 @@ public class DealershipController {
     public DealershipDto byName(@PathVariable String name) {
         final Dealership dealershipByName = service.getDealershipByName(name);
 
-        return new DealershipDto(dealershipByName.getName());
+        return mapper.toDto(dealershipByName);
     }
 
 //    /**

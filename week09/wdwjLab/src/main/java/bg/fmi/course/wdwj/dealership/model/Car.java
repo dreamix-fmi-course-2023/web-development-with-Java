@@ -1,63 +1,47 @@
 package bg.fmi.course.wdwj.dealership.model;
 
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.math.BigDecimal;
+import java.util.List;
+import java.util.Objects;
 
+@Entity
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "car")
 public class Car {
-    private String make;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
+    private Long id;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "dealership_id")
+    private Dealership dealership;
+
+    @Column
+    private String brand;
+
+    @Column
     private String model;
 
+    @Column
     private int year;
 
+    @Column
+    private String color;
+
+    @Column
     private BigDecimal price;
-
-    public Car(String make, String model, int year, BigDecimal price) {
-        this.make = make;
-        this.model = model;
-        this.year = year;
-        this.price = price;
-    }
-
-    public String getMake() {
-        return make;
-    }
-
-    public void setMake(String make) {
-        this.make = make;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    @Override
-    public String toString() {
-        return "Car{" +
-                "make='" + make + '\'' +
-                ", model='" + model + '\'' +
-                ", year=" + year +
-                ", price=" + price +
-                '}';
-    }
-
 }
+
+
+
+

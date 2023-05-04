@@ -31,7 +31,7 @@ public class InvoiceService {
 
     public Long createInvoice(Invoice invoice) {
         log.info("Create invoice, source = {}", invoice);
-        return invoiceRepository.save(invoice).getInvoiceId();
+        return invoiceRepository.save(invoice).getId();
     }
 }
 
