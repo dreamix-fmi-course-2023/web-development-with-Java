@@ -99,59 +99,63 @@ And the seller is associated to my dealership
 
 
 
-DB diagram code
-```
-// Use DBML to define your database structure
-// Docs: https://dbml.dbdiagram.io/docs
+## DB diagram code
+<details>
+  <summary>dbdiagram.io</summary>
+  
+  ```
+  // Use DBML to define your database structure
+  // Docs: https://dbml.dbdiagram.io/docs
 
-Table "invoice" {
-  "id" bigserial [pk, not null, increment]
-  "base_price" bigdecimal
-  "customer_name" varchar(255)
-  "invoice_date" date
-  "invoice_number" varchar(255)
-  "tax_rate" "numeric(38, 2)"
-  "total_price" "numeric(38, 2)"
-}
+  Table "invoice" {
+    "id" bigserial [pk, not null, increment]
+    "base_price" bigdecimal
+    "customer_name" varchar(255)
+    "invoice_date" date
+    "invoice_number" varchar(255)
+    "tax_rate" "numeric(38, 2)"
+    "total_price" "numeric(38, 2)"
+  }
 
 
-Table "car" {
-  "id" bigserial [pk, not null, increment]
-  "color" varchar(255)
-  "make" varchar(255)
-  "model" varchar(255)
-  "price" "numeric(38, 2)"
-  "year" integer
-  "dealership_id" bigint
-}
-Ref: "car"."dealership_id" > "dealership"."id"
+  Table "car" {
+    "id" bigserial [pk, not null, increment]
+    "color" varchar(255)
+    "make" varchar(255)
+    "model" varchar(255)
+    "price" "numeric(38, 2)"
+    "year" integer
+    "dealership_id" bigint
+  }
+  Ref: "car"."dealership_id" > "dealership"."id"
 
-Table "dealership" {
-  "id" bigserial [pk, not null, increment]
-  "address" varchar(255)
-  "email" varchar(255)
-  "name" varchar(255)
-  "phone_number" varchar(255)
-}
+  Table "dealership" {
+    "id" bigserial [pk, not null, increment]
+    "address" varchar(255)
+    "email" varchar(255)
+    "name" varchar(255)
+    "phone_number" varchar(255)
+  }
 
-Table "sale" {
-  "id" bigserial [pk, not null, increment]
-  "sale_date" date
-  "total_price" "numeric(38, 2)"
-  "car_id" bigint
-  "invoice_id" bigint
-  "sales_person_id" bigint
-}
-Ref: "car"."id" - "sale"."car_id"
-Ref: "invoice"."id" - "sale"."invoice_id"
+  Table "sale" {
+    "id" bigserial [pk, not null, increment]
+    "sale_date" date
+    "total_price" "numeric(38, 2)"
+    "car_id" bigint
+    "invoice_id" bigint
+    "sales_person_id" bigint
+  }
+  Ref: "car"."id" - "sale"."car_id"
+  Ref: "invoice"."id" - "sale"."invoice_id"
 
-Table "sales_person" {
-  "id" bigserial [pk, not null, increment]
-  "email" varchar(255)
-  "name" varchar(255)
-  "phone_number" varchar(255)
-  "dealership_id" bigint
-}
-Ref: "sales_person"."dealership_id" > "dealership"."id"
-Ref: "sales_person"."id" < "sale"."sales_person_id"
-```
+  Table "sales_person" {
+    "id" bigserial [pk, not null, increment]
+    "email" varchar(255)
+    "name" varchar(255)
+    "phone_number" varchar(255)
+    "dealership_id" bigint
+  }
+  Ref: "sales_person"."dealership_id" > "dealership"."id"
+  Ref: "sales_person"."id" < "sale"."sales_person_id"
+  ```
+</details>
