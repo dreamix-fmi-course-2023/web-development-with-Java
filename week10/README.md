@@ -18,6 +18,45 @@ Create a DB model which will allow you to have Dealerships with associated cars.
   ![](images/Task1.png)
 </details>
 
+<details>
+  <summary>Click to expand!<summary>
+
+  ```
+  public class Dealership {
+    private Long id;
+
+    private ??<Car> cars;
+
+    private ??<SalesPerson> salesPeople;
+
+    private String name;
+
+    private String address;
+
+    private String phoneNumber;
+
+    private String email;
+  }
+  ```
+
+  ```
+  public class Car {
+    private Long id;
+
+    private Dealership dealership;
+
+    private String brand;
+
+    private String model;
+
+    private int year;
+
+    private String color;
+
+    private BigDecimal price;
+}
+  ```
+</details>
 
 # Task 2
 A salesperson is a human being associated with a dealership. One person can be employed at only one dealership
@@ -28,6 +67,26 @@ A salesperson is a human being associated with a dealership. One person can be e
   ![](images/Task2.png)
 </details>
 
+<details>
+  <summary>Click to expand!</summary>
+  
+  ```
+  public class SalesPerson {
+    private Long id;
+
+    private Dealership dealership;
+
+    private ??<Sale> sales;
+
+    private String name;
+
+    private String email;
+
+    private String phoneNumber;
+}
+  ```
+</details>
+
 # Task 3
 To execute a Car sale define a "sale" table which whill be connected to sales_person (the executor of the deal). One sale is associated to one invoice and to only one car
 
@@ -35,6 +94,31 @@ To execute a Car sale define a "sale" table which whill be connected to sales_pe
   <summary>Click to expand!</summary>
   
   ![](images/Task3.png)
+</details>
+
+<details>
+  <summary>Click to expand!</summary>
+  
+  ```
+  public class Invoice {
+
+    private Long id;
+
+    private String invoiceNumber;
+
+    private String customerName;
+
+    private LocalDate invoiceDate;
+
+    private BigDecimal basePrice;
+
+    private BigDecimal taxRate;
+
+    private BigDecimal totalPrice;
+
+}
+
+  ```
 </details>
 
 # Task 4
