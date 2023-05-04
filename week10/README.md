@@ -54,7 +54,7 @@ Create a DB model which will allow you to have Dealerships with associated cars.
     private String color;
 
     private BigDecimal price;
-}
+  }
   ```
 </details>
 
