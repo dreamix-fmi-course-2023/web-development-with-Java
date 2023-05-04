@@ -1,7 +1,7 @@
 For our Dealership platform, we will define the following business requirements:
 - one car per sale
 - one invoice per sale
-- salesperson (dealership_seller) can make multiple sale deals
+- salesperson (sales_person) can make multiple sale deals
 - sales_person can work with only one dealership
 
 With this in mind, design and implement the DB model structure
