@@ -1,0 +1,158 @@
+For our Dealership platform, we will define the following business requirements:
+- one car per sale
+- one invoice per sale
+- salesperson (dealership_seller) can make multiple sale deals
+- sales_person can work with only one dealership
+
+With this in mind, design and implement the DB model structure
+
+# Task 1
+Create a DB model which will allow you to have Dealerships with associated cars.
+
+<details>
+  <summary>Click to expand!</summary>
+  
+  ![](images/Task1.png)
+</details>
+
+
+# Task 2
+A salesperson is a human being associated with a dealership. One person can be employed at only one dealership
+
+<details>
+  <summary>Click to expand!</summary>
+  
+  ![](images/Task2.png)
+</details>
+
+# Task 3
+To execute a Car sale define a "sale" table which whill be connected to sales_person (the executor of the deal). One sale is associated to one invoice and to only one car
+
+<details>
+  <summary>Click to expand!</summary>
+  
+  ![](images/Task3.png)
+</details>
+
+# Task 4
+For a sale to have everything we need to define the invoice which will be given to the customer. One invoice can be assosicated to one sale.
+
+<details>
+  <summary>Click to expand!</summary>
+  
+  ![](images/Task4.png)
+</details>
+
+Final DB Diagram:
+<details>
+  <summary>Click to expand!</summary>
+  
+    ![](images/DBDiagram.png)
+
+</details>
+
+# Task 4
+In our dealership platform we want to be able to create new dealership via REST API
+
+example endpoint body:
+```
+{
+    "name": "Best Dealership",
+    "address": "123 James Baucher St",
+    "phoneNumber": "+359 999999999",
+    "email": "info@bestdealership.com"
+}
+```
+
+# Task 5
+
+Business value:
+Dealership without cars cannot function properly. I want to be able to add a car to my dealership so I can sell it in later stage
+
+Acceptance criteria:
+
+Given I'm a dealership
+When I acquire a new car
+Then the car is saved inside DB
+And the car is associated to my dealership
+
+
+example endpoint body
+```
+{
+    "dealershipId": 1,
+    "brand": "Honda",
+    "model": "Civic",
+    "year": 2021,
+    "color": "Red",
+    "price": 25000.00
+}
+
+```
+
+# Task 6
+In order to sell cars the dealership needs sales people. I want to be able to hire new employees that will sell cars.
+
+Given I'm a dealership
+When I hire a new seller
+Then the seller is saved inside DB
+And the seller is associated to my dealership
+
+
+
+DB diagram code
+```
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table "invoice" {
+  "id" bigserial [pk, not null, increment]
+  "base_price" bigdecimal
+  "customer_name" varchar(255)
+  "invoice_date" date
+  "invoice_number" varchar(255)
+  "tax_rate" "numeric(38, 2)"
+  "total_price" "numeric(38, 2)"
+}
+
+
+Table "car" {
+  "id" bigserial [pk, not null, increment]
+  "color" varchar(255)
+  "make" varchar(255)
+  "model" varchar(255)
+  "price" "numeric(38, 2)"
+  "year" integer
+  "dealership_id" bigint
+}
+Ref: "car"."dealership_id" > "dealership"."id"
+
+Table "dealership" {
+  "id" bigserial [pk, not null, increment]
+  "address" varchar(255)
+  "email" varchar(255)
+  "name" varchar(255)
+  "phone_number" varchar(255)
+}
+
+Table "sale" {
+  "id" bigserial [pk, not null, increment]
+  "sale_date" date
+  "total_price" "numeric(38, 2)"
+  "car_id" bigint
+  "invoice_id" bigint
+  "sales_person_id" bigint
+}
+Ref: "car"."id" - "sale"."car_id"
+Ref: "invoice"."id" - "sale"."invoice_id"
+
+Table "sales_person" {
+  "id" bigserial [pk, not null, increment]
+  "email" varchar(255)
+  "name" varchar(255)
+  "phone_number" varchar(255)
+  "dealership_id" bigint
+}
+Ref: "sales_person"."dealership_id" > "dealership"."id"
+Ref: "sales_person"."id" < "sale"."sales_person_id"
+```
