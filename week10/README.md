@@ -137,7 +137,7 @@ Final DB Diagram:
   ![](images/DBDiagram.png)
 </details>
 
-# Task 4
+# Task 5
 In our dealership platform we want to be able to create new dealership via REST API
 
 example endpoint body:
@@ -150,7 +150,7 @@ example endpoint body:
 }
 ```
 
-# Task 5
+# Task 6
 
 Business value:
 Dealership without cars cannot function properly. I want to be able to add a car to my dealership so I can sell it in later stage
