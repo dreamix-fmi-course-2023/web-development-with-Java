@@ -47,8 +47,7 @@ Final DB Diagram:
 <details>
   <summary>Click to expand!</summary>
   
-    ![](images/DBDiagram.png)
-
+  ![](images/DBDiagram.png)
 </details>
 
 # Task 4
