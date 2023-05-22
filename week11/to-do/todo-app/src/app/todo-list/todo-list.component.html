@@ -1,0 +1,14 @@
+<div class="list-details">
+  <input type="text" placeholder="Write name" [(ngModel)]="newName">
+  <input type="text" placeholder="Write desc" [(ngModel)]="newDesc">
+  <input type="date" [(ngModel)]="newDate">
+  <button (click)="addTask()">Add Task</button>
+</div>
+
+<ul>
+  <li *ngFor="let forTask of tasks">
+    <app-todo-item
+      [task]="forTask"
+    ></app-todo-item>
+  </li>
+</ul>
