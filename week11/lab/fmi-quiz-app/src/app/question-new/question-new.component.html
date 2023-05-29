@@ -1,0 +1,49 @@
+<form class="container" [formGroup]="questionForm">
+  <mat-form-field class="example-full-width">
+    <mat-label>Title</mat-label>
+    <input matInput formControlName="title">
+  </mat-form-field>
+  <div>
+    <div class="quiz-option" formGroupName="option1">
+      <mat-form-field class="quiz-option">
+        <mat-label>Option 1</mat-label>
+        <input matInput formControlName="value">
+      </mat-form-field>
+      <mat-checkbox formControlName="isCorrect"></mat-checkbox>
+    </div>
+
+    <div class="quiz-option" formGroupName="option2">
+      <mat-form-field class="example-full-width">
+        <mat-label>Option2</mat-label>
+        <input matInput formControlName="value">
+      </mat-form-field>
+      <mat-checkbox formControlName="isCorrect"></mat-checkbox>
+    </div>
+  </div>
+  <div>
+    <div class="quiz-option" formGroupName="option3">
+      <mat-form-field class="example-full-width">
+        <mat-label>Option3</mat-label>
+        <input matInput formControlName="value">
+      </mat-form-field>
+      <mat-checkbox formControlName="isCorrect"></mat-checkbox>
+    </div>
+    <div class="quiz-option" formGroupName="option4">
+      <mat-form-field class="example-full-width">
+        <mat-label>Option4</mat-label>
+        <input matInput formControlName="value">
+      </mat-form-field>
+      <mat-checkbox formControlName="isCorrect"></mat-checkbox>
+    </div>
+  </div>
+
+  <button mat-raised-button color="primary" (click)="addQuestion()">Add</button>
+</form>
+
+<p *ngIf="!isFormValid">Question is empty</p>
+
+<div class="result-container">
+  <app-question-details *ngFor="let question of questions" [question]="question"></app-question-details>
+</div>
+
+

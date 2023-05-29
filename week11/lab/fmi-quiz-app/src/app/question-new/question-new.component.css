@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.result-container {
+  margin: 25px;
+  background: gray;
+}
+
+.quiz-option {
+  display: flex;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
