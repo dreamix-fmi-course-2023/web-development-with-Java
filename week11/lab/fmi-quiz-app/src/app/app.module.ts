@@ -9,12 +9,17 @@ import { MaterialUIModule } from './material-ui/material-ui.module';
 import { QuestionDetailsComponent } from './question-details/question-details.component';
 import { QuestionNewComponent } from './question-new/question-new.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { QuizComponent } from './quiz/quiz.component';
+import { QuizQuestionComponent } from './quiz-question/quiz-question.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuestionNewComponent,
-    QuestionDetailsComponent
+    QuestionDetailsComponent,
+    QuizComponent,
+    QuizQuestionComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +28,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MaterialUIModule,
     FormsModule,
     ReactiveFormsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

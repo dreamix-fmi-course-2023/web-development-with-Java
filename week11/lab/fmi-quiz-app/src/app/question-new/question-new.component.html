@@ -1,3 +1,6 @@
+
+<div style="display: flex;
+    justify-content: center;">
 <form class="container" [formGroup]="questionForm">
   <mat-form-field class="example-full-width">
     <mat-label>Title</mat-label>
@@ -39,6 +42,7 @@
 
   <button mat-raised-button color="primary" (click)="addQuestion()">Add</button>
 </form>
+</div>
 
 <p *ngIf="!isFormValid">Question is empty</p>
 

@@ -1,0 +1,25 @@
+<!--<div class="question-container">-->
+<!--  <span>{{question?.question?.title}}</span>-->
+
+<!--  <mat-chip-list aria-label="Fish selection">-->
+<!--    <mat-chip (click)="onClick(question?.question?.option1)">{{question?.question?.option1?.value}}</mat-chip>-->
+<!--    <mat-chip (click)="onClick(question?.question?.option2)">{{question?.question?.option2?.value}}</mat-chip>-->
+<!--    <mat-chip (click)="onClick(question?.question?.option3)">{{question?.question?.option3?.value}}</mat-chip>-->
+<!--    <mat-chip (click)="onClick(question?.question?.option4)">{{question?.question?.option4?.value}}</mat-chip>-->
+<!--  </mat-chip-list>-->
+<!--  <div *ngIf="question?.isCorrect && question?.isAnswered" style="background: green"> Correct</div>-->
+<!--  <div  *ngIf="!question?.isCorrect &&  question?.isAnswered"  style="background: red"> Incorrect</div>-->
+<!--</div>-->
+
+<mat-card>
+  <mat-card-content>
+    <span>{{question?.question?.title}}</span>
+
+    <mat-chip-list aria-label="Fish selection">
+      <mat-chip (click)="onClick(question?.question?.option1)">{{question?.question?.option1?.value}}</mat-chip>
+      <mat-chip (click)="onClick(question?.question?.option2)">{{question?.question?.option2?.value}}</mat-chip>
+      <mat-chip (click)="onClick(question?.question?.option3)">{{question?.question?.option3?.value}}</mat-chip>
+      <mat-chip (click)="onClick(question?.question?.option4)">{{question?.question?.option4?.value}}</mat-chip>
+    </mat-chip-list>
+  </mat-card-content>
+</mat-card>

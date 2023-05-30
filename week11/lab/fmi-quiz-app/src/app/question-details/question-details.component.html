@@ -2,9 +2,9 @@
   <span>{{question?.title}}</span>
 
   <mat-chip-list aria-label="Fish selection">
-    <mat-chip>{{question?.option1?.value}}</mat-chip>
-    <mat-chip>{{question?.option2?.value}}</mat-chip>
-    <mat-chip>{{question?.option3?.value}}</mat-chip>
-    <mat-chip>{{question?.option4?.value}}</mat-chip>
+    <mat-chip> <mat-icon *ngIf="question?.option1?.isCorrect">check</mat-icon>{{question?.option1?.value}}</mat-chip>
+    <mat-chip> <mat-icon *ngIf="question?.option2?.isCorrect">check</mat-icon>{{question?.option2?.value}}</mat-chip>
+    <mat-chip> <mat-icon *ngIf="question?.option3?.isCorrect">check</mat-icon>{{question?.option3?.value}}</mat-chip>
+    <mat-chip> <mat-icon *ngIf="question?.option4?.isCorrect">check</mat-icon>{{question?.option4?.value}}</mat-chip>
   </mat-chip-list>
 </div>

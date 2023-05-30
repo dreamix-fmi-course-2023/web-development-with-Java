@@ -1,0 +1,7 @@
+<span> Points: {{ points}}</span>
+<div *ngIf="isCorrect && isAnswered" style="background: green"> Correct</div>
+<div  *ngIf="!isCorrect &&  isAnswered"  style="background: red"> Incorrect</div>
+<mat-progress-bar mode="determinate" [value]="progress" style="margin-top: 10px"></mat-progress-bar>
+<div *ngFor="let question of questions">
+  <app-quiz-question *ngIf="!question.isAnswered" [question]="question" (optionSelected)="onOptionSelected($event)" class="question"></app-quiz-question>
+</div>
